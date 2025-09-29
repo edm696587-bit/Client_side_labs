@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>news</title>
+    <style>
+      img {
+        height: 700px;
+        width: 1600px;
+      }
+      div {
+        position: relative;
+        margin: 20px auto;
+      }
+      .chdiv {
+        display: inline-block;
+        background-color: rgb(73, 71, 69);
+        position: absolute;
+        text-align: center;
+        bottom: 0px;
+        right: 0px;
+        z-index: 2;
+        border-radius: 5px;
+        padding: 10px;
+      }
+      div div p {
+        color: rgb(255, 255, 255);
+        font-size: large;
+      }
+      .p {
+        font-size: xx-large;
+        background-color: rgb(105, 235, 235);
+        display: inline-block;
+        position: absolute;
+        left: 700px;
+        opacity: 0.3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div">
+      <p class="p">z_index option</p>
+      <img
+        src="resource/pexels-m-venter-792254-1659438.jpg"
+        alt="image"
+        class="img"
+      />
+      <div class="chdiv">
+        <p>nature</p>
+        <p>what a beautiful scene</p>
+      </div>
+    </div>
+  </body>
+</html>

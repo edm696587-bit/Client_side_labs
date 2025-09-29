@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      .target-div {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      .class-a {
+        background-color: yellow;
+        color: black;
+      }
+      .class-b {
+        background-color: blue;
+        color: white;
+      }
+      .hidden {
+        display: none;
+
+      }
+
+.image_loop{
+  width: 400px;
+  height: 300px;
+background-color: aquamarine;
+position: relative;
+
+      }
+.card{
+  position: absolute;
+  bottom: 0px;
+  right: 120px;
+  width: 200px;
+
+
+}      
+.buttonn{
+position: absolute;
+left: 80px;
+
+
+}
+.odd {
+  background-color: #3c93c5;
+  color: rgb(31, 129, 144);
+  
+}
+.even {
+  background-color: #d0ffd0;
+  color: rgb(53, 130, 101);
+}
+.ul_31{
+  list-style: none;
+
+}
+.class{
+  border: 1.5px;
+  background-color: aqua;
+  width: 300px;
+  height: 150px;
+}
+.myForm{
+  border: 1px solid #a04747;
+}
+    </style>
+  </head>
+  <body>
+    <h1>Day4 DOM</h1>
+    <div id="my-div">
+      <p id="my-p">Hello ISI</p>
+    </div>
+    <form action="test.html">
+      <input type="text" id="my-input" placeholder="Type something..." />
+      <input
+        type="email"
+        name="user-email"
+        id="my-email"
+        placeholder="Type your email..."
+      />
+      <select name="user-country" id="my-select">
+        <option value="us">United States</option>
+        <option value="EG">Egypt</option>
+        <option value="uk">United Kingdom</option>
+      </select>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <div class="target-div" id="div-2">
+      <h3>create element using js</h3>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque,
+        reiciendis!
+      </p>
+    </div>
+    <div id="wrapper">
+      <p id="first">First</p>
+      <p id="second">Second</p>
+     </div>
+
+    <div class="image_loop">
+      <div class="card">
+        <img src="assets/1.png" alt="images_loop">
+      </div>
+      <div class="buttonn">
+      <button>Start</button>
+      <button>Puse</button>
+      <button>Next</button>
+      <button>Prevouse</button>
+      </div>
+    </div>
+    <br> <br> <br>
+
+    
+    <div class="class" id="1">This is div A</div>
+    <br>
+    <br>
+    <br>
+    <div class="class" id="2">This is div B</div>
+    <br>
+    <br>
+    <br>
+    <div class="class" id="3" >This is div C</div>
+
+    <br> <br>
+
+    <form id="myForm">
+    <label for="name">First Name:</label>
+    <input type="text" id="name" name="name">
+   
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName">
+ 
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+
+
+    <button type="submit">btn</button>
+
+    <script src="DOM-assignment.js"></script>
+  </body>
+</html>

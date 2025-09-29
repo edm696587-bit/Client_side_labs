@@ -1,0 +1,97 @@
+Functions and Prototypes
+
+Every normal function has a prototype property.
+
+Arrow functions don’t have a prototype.
+----------------------------------------------------------------------
+function doSomething() {}
+console.log(doSomething.prototype); // has default prototype
+
+const arrowFn = () => {};
+console.log(arrowFn.prototype); // undefined
+
+----------------------------------------------------------------------
+Adding to a Prototype
+
+You can add shared properties/methods to a function’s prototype:
+
+----------------------------------------------------------------------
+function Person() {}
+Person.prototype.role = "Human";
+
+const p = new Person();
+console.log(p.role); // "Human"
+
+----------------------------------------------------------------------
+
+When accessing a property:
+
+JavaScript checks the object itself.
+
+If not found, it checks the object’s prototype (obj.[[Prototype]]).
+
+This continues up the chain until Object.prototype.
+
+If still not found, returns undefined.
+
+Different Ways to Create Prototype Chains
+1. Object literals
+
+----------------------------------------------------------------------
+const o = { a: 1 }; // o ---> Object.prototype ---> null
+const arr = [];     // arr ---> Array.prototype ---> Object.prototype
+
+2. Constructor functions
+function Graph() {
+  this.vertices = [];
+}
+Graph.prototype.addVertex = function(v) {
+  this.vertices.push(v);
+};
+
+const g = new Graph();
+
+3. Object.create()
+const base = { a: 1 };
+const b = Object.create(base); // b ---> base ---> Object.prototype
+
+4. Classes (syntactic sugar)
+class Rectangle {
+  constructor(w, h) {
+    this.w = w; this.h = h;
+  }
+}
+class Square extends Rectangle {
+  constructor(size) {
+    super(size, size);
+  }
+}
+
+5. Object.setPrototypeOf()
+const obj = { a: 1 };
+const proto = { b: 2 };
+Object.setPrototypeOf(obj, proto);
+
+
+----------------------------------------------------------------------
+⚠️ Slower than setting prototype at creation.
+
+6. proto (deprecated)
+
+----------------------------------------------------------------------
+const obj = {};
+obj.__proto__ = { foo: "bar" }; // ❌ don’t use
+
+----------------------------------------------------------------------
+Performance Notes
+
+Looking up properties high in the chain is slower.
+
+Iterating properties includes those on the prototype.
+
+Use obj.hasOwnProperty(key) or Object.hasOwn(obj, key) to check if a property belongs directly to the object.
+
+----------------------------------------------------------------------
+
+g.hasOwnProperty("vertices"); // true
+Object.hasOwn(g, "addVertex"); // false

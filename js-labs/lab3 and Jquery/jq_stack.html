@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery Stack</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      body {
+        background: #121212;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .controls {
+        margin-bottom: 15px;
+      }
+
+      input {
+        padding: 8px;
+        width: 150px;
+        border: none;
+        border-radius: 5px;
+      }
+
+      button {
+        padding: 8px 15px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        background: #444;
+        color: white;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #666;
+      }
+
+      .stack {
+        width: 180px;
+        height: 300px;
+        border-left: 4px solid rgb(51, 255, 0);
+        border-right: 4px solid rgb(51, 255, 0);
+        border-bottom: 4px solid rgb(51, 255, 0);
+        background: rgba(114, 255, 208, 0.57);
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        overflow-y: auto;
+        padding: 5px;
+      }
+
+      .stack p {
+        background: aqua;
+        color: #000;
+        width: 90%;
+        padding: 6px;
+        margin: 4px 0;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      .bottom-controls {
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <input type="text" id="stackInput" placeholder="type some thing to add" />
+      <button id="pushBtn">Push</button>
+    </div>
+
+    <div class="stack" id="stackBox"></div>
+
+    <div class="bottom-controls">
+      <button id="popBtn">Pop</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#pushBtn").click(function () {
+          let val = $("#stackInput").val();
+          if (val) {
+            $("#stackBox").append("<p>" + val + "</p>");
+            $("#stackInput").val("");
+          }
+        });
+
+        $("#popBtn").click(function () {
+          let last = $("#stackBox p").last();
+          if (last.length) {
+            alert("Popped: " + last.text());
+            last.remove();
+          } else {
+            alert("Stack is empty!");
+          }
+        });
+
+        $("#resetBtn").click(function () {
+          $("#stackBox").empty();
+        });
+      });
+    </script>
+  </body>
+</html>

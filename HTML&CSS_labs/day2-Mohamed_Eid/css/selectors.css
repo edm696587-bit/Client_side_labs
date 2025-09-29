@@ -1,0 +1,31 @@
+
+p {
+    color: red;
+
+}
+p,div{
+    background-color: aqua;
+
+}
+
+
+div#myDiv > p.mainClass{
+    color: rgb(6, 80, 25);
+}
+div p{
+    color: rgb(170, 4, 148);
+}
+input[type="text"].myClass {
+    border: 2px solid rgb(20, 7, 1);
+}
+
+div + span {
+    background-color: lightgreen;
+}
+p.myClass {
+    font-weight: bold;
+}
+#myDiv {
+    padding: 10px;
+    background-color: lightgray;
+}

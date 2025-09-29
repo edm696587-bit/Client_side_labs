@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Employees Table</title>
+  </head>
+  <body>
+    <div class="table-container">
+      <h1>Employees Table</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Name
+              <button onclick="pushdata(sortt( true, 'name'))">⬆️</button>
+              <button onclick="pushdata(sortt( false, 'name'))">⬇️</button>
+            </th>
+            <th>
+              Age
+              <button onclick="pushdata(sortt( true, 'age'))">⬆️</button>
+              <button onclick="pushdata(sortt( false, 'age'))">⬇️</button>
+            </th>
+            <th>
+              Position
+              <button onclick="pushdata(sortt( true, 'position'))">⬆️</button>
+              <button onclick="pushdata(sortt( false, 'position'))">⬇️</button>
+            </th>
+            <th>
+              Office
+              <button onclick="pushdata(sortt( true, 'office'))">⬆️</button>
+              <button onclick="pushdata(sortt( false, 'office'))">⬇️</button>
+            </th>
+            <th>
+              Start Date
+              <button onclick="pushdata(sortt( true, 's_date'))">⬆️</button>
+              <button onclick="pushdata(sortt( false, 's_date'))">⬇️</button>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="employee-body"></tbody>
+      </table>
+    </div>
+    <form action="" class="form">
+      <label for="name">Name</label>
+      <input type="text" id="name" required>
+      <label for="Age">Age</label>
+      <input type="number" id="Age" required>
+      <label for="Position">Position</label>
+      <input type="text" id="Position" required>
+      <label for="Office">Office</label>
+      <input type="text" id="Office" required>
+      <label for="Start_date">Start-date</label>
+      <input type="date" id="Start_date" required>
+      
+      <button  type="button" class="btn" onclick="Addemp()">Add</button>
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>

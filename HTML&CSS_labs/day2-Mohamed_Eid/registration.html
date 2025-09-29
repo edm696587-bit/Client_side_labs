@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>registration</title>
+  </head>
+  <body>
+    <form method="post">
+      <label for="first_name">First name : </label>
+      <input
+        type="text"
+        name="first_name"
+        id="first_name"
+        placeholder="enter your first name"
+        required
+      />
+      <br />
+      <br />
+      <label for="last_name">Last name : </label>
+      <input
+        type="text"
+        name="last_name"
+        id="last_name"
+        placeholder="enter your last name"
+        required
+      />
+      <br />
+      <br />
+      <label for="email">Email : </label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="email@sdnlk"
+        required
+      />
+      <br />
+      <br />
+      <label for="password">Password : </label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="enter a strong password"
+      />
+      <br />
+      <br />
+      <label for="repeat_password">Repeat_Password : </label>
+      <input
+        type="repeat_password"
+        name="repeat_password"
+        id="repeat_password"
+        placeholder="confirm your password"
+        minlength="6"
+      />
+      <br />
+      <br />
+      <label for="DOB">Date of birth : </label>
+      <input type="date" name="DOB" id="DOB" />
+      <br />
+      <br />
+      <label for="Picture">Uploud a picture : </label>
+      <input type="file" name="Picture" id="Picture" />
+      <br />
+      <br />
+      <fieldset>
+        <legend>Gender</legend>
+        <input type="radio" name="gender" value="Male" /> Male
+        <input type="radio" name="gender" value="Female" /> Female
+      </fieldset>
+      <br />
+
+      Faculty:
+      <select name="faculty">
+        <option value="">-- Select Faculty --</option>
+        <option value="Engineering">Engineering</option>
+        <option value="computer Science">computer Science</option>
+        <option value="Business">Business</option>
+      </select>
+      <br />
+      <br />
+
+      <fieldset>
+        <legend>hoppies</legend>
+        <input type="checkbox" name="hoppies" value="Programming" /> Programming
+        <input type="checkbox" name="hoppies" value="Reading" /> Reading
+        <input type="checkbox" name="hoppies" value="Swimming" /> Swimming
+        <input type="checkbox" name="hoppies" value="Traveling" /> Traveling
+      </fieldset>
+      <br />
+
+      About you:<br />
+      <textarea
+        name="about"
+        rows="10"
+        cols="25"
+        placeholder="Write about yourself"
+      ></textarea>
+      <br />
+      <br />
+
+      <input type="checkbox" name="agree" required /> I agree to the terms and
+      conditions <br />
+      <br />
+
+      <input type="reset" value="Reset" />
+    </form>
+
+    <form action="text.html" method="get">
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
